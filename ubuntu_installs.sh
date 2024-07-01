@@ -1,5 +1,3 @@
-DOTFILES_PATH="~/.config/ng-dotfiles"
-
 #!/bin/bash
 sudo apt install \
 	neovim \
@@ -15,14 +13,23 @@ sudo apt install \
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 
 
-
-# link config files
-FILES=( #relative to home folder
-  ".gitconfig"
+DOTFILES_PATH="$HOME/.config/ng-dotfiles"
+# List of config files relative to the home directory
+FILES=(
+  "gitconfig"
+  "zshrc"
 )
-# Check if the file exists
-if [ ! -f "$FILE_PATH" ]; then
-  echo ln -s ~/"$DOTFILES_PATH"/"$FILE_PATH" ~/"$FILE_PATH" 
-else
-  echo "File $FILE_PATH already exists!"
-fi
+
+for FILE in "${FILES[@]}"; do
+  FILE_PATH="$HOME/.$FILE"
+  DOTFILE_PATH="$DOTFILES_PATH/$FILE"
+
+  # Check if the target file already exists
+  if [ ! -f "$FILE_PATH" ]; then
+    echo "Creating symbolic link for $FILE"
+    ln -s "$DOTFILE_PATH" "$FILE_PATH"
+  else
+    echo "File $FILE already exists!"
+  fi
+done
+

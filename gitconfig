@@ -1,0 +1,137 @@
+[alias]
+  # list all aliases available on this gitconfig
+  alias = !git config --get-regexp '^alias\\.' | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+
+  # `git auto-fixup`
+  #
+  # Uses the most recent commit starting from HEAD (up to 50 commits) that is contained in a branch other than the current one.
+  # If it cannot find a commit that belongs to another branch (e.g. working directly on master on a new repo) or if we are working in detached HEAD it uses the absorb command without specifying any base.
+  auto-fixup = "!git absorb -r $(for c in $(git log -50 | awk '{print $1}'); do branch=$(git branch --show-current); if ! [ -z "${branch}" ] && [ $(git branch --all --contains $c | grep -v $branch | wc -l) -gt 0 ]; then echo \"-b $c\"; break; fi; done) $* #"
+
+  # branch (verbose)
+  br = branch -v
+
+  # commit
+  ci = commit --verbose
+
+  # amend your last commit
+  amend = commit --amend --verbose
+
+  # cleanup local branches after they have been merged
+  cleanup = "!git branch -vvv | grep ': gone]' | grep -v '\\*' | awk '{ print \"git branch -D\", $1 }' | bash"
+
+  # checkout
+  co = checkout
+
+  # checkout pr #<nr>
+  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+
+  # fixup
+  fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+
+  # pretty log
+  lg = log --graph --pretty='format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+  # push (promote) your branch to remote origin and track it
+  # this is useful the first time you try to push a new local branch to origin
+  promote = "!git push -u origin ${1:-HEAD}"
+
+  # rebase
+  rb = rebase
+  ri = rebase --interactive --autosquash
+
+  # commit with squash tag
+  squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+
+  # status
+  st = status
+
+  # working in progress commit
+  unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip [ci skip]\" --no-verify"
+
+[apply]
+  whitespace = fix
+
+[branch]
+  autosetuprebase = always
+
+[core]
+  attributesfile = ~/.gitattributes
+  autocrlf = input
+  editor = nvim
+  excludesfile = /opt/dotfiles/git/gitignore
+  quotepath = false
+  safecrlf = true
+  whitespace = cr-at-eol,space-before-tab,-indent-with-non-tab,trailing-space
+  pager = delta --diff-so-fancy
+
+[delta]
+  navigate = true
+  side-by-side = true
+  features = unobtrusive-line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "unobtrusive-line-numbers"]
+  line-numbers = true
+  line-numbers-minus-style = "#444444"
+  line-numbers-zero-style = "#444444"
+  line-numbers-plus-style = "#444444"
+  line-numbers-left-format = "{nm:>4}┊"
+  line-numbers-right-format = "{np:>4}│"
+  line-numbers-left-style = blue
+  line-numbers-right-style = blue
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = yellow box
+
+[diff]
+  colorMoved = default
+  tool = vimdiff
+
+[fetch]
+  prune = true
+
+[format]
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[include]
+  path = ~/.gitconfig.local
+
+[init]
+  templatedir = /opt/dotfiles/git/git-templates
+  defaultBranch = master
+
+[interactive]
+  diffFilter = delta --color-only --diff-so-fancy
+
+[merge]
+  conflictstyle = diff3
+
+[pull]
+  rebase = merges
+
+[push]
+  default = current
+
+[rebase]
+  autosquash = true
+  autostash = true
+  stat = true
+
+[rerere]
+  enabled = 1
+  autoupdate = true
+
+[status]
+  showUntrackedFiles = all
+
+[tag]
+  sort = -version:refname
+[user]
+	email = muldy@ryzen-linux
+	name = muldy
