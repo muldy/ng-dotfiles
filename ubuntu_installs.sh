@@ -9,11 +9,13 @@ sudo apt install \
 	-y
 
 
+
 # set defaults
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 
 
 DOTFILES_PATH="$HOME/.config/ng-dotfiles"
+mkdir -p $DOTFILES_PATH/backup/
 # List of config files relative to the home directory
 FILES=(
   "gitconfig"
@@ -30,6 +32,7 @@ for FILE in "${FILES[@]}"; do
     ln -s "$DOTFILE_PATH" "$FILE_PATH"
   else
     echo "File $FILE already exists!"
+
   fi
 done
 
