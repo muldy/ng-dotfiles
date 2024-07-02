@@ -6,8 +6,13 @@ sudo apt install \
 	htop \
 	tmux \
 	tilix \
+	zsh \
 	-y
 
+
+# omzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv ~/.oh-my-zsh ~/.config/oh-my-zsh
 
 
 # set defaults
