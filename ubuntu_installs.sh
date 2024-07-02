@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# PATHS
+DOTFILES_PATH="$HOME/.config/ng-dotfiles"
+OMZSH_DIR="~/.config/oh-my-zsh"
+
+echo -e "\nInstalling packages\n"
 sudo apt install \
 	neovim \
 	git \
@@ -10,17 +16,20 @@ sudo apt install \
 	gnome-shell-extension-manager \
 	-y
 
-
-# omzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ~/.oh-my-zsh ~/.config/oh-my-zsh
-
-
 # set defaults
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 
+echo -e "\nInstalling Oh My ZShell\n"
+# omzsh
+if [ -d "$OMZSH_DIR" ]; then
+  echo -e "\nOh My Zsh alredy installed"
+else
+  echo -e "\nInstalling Oh My Zsh"
+  #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  #mv ~/.oh-my-zsh $OMZSH_DIR
+fi
 
-DOTFILES_PATH="$HOME/.config/ng-dotfiles"
+
 mkdir -p $DOTFILES_PATH/backup/
 # List of config files relative to the home directory
 FILES=(
@@ -28,6 +37,7 @@ FILES=(
   "zshrc"
 )
 
+echo -e "\nHandle dotfiles"
 for FILE in "${FILES[@]}"; do
   FILE_PATH="$HOME/.$FILE"
   DOTFILE_PATH="$DOTFILES_PATH/$FILE"
