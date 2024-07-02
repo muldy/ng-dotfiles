@@ -1,4 +1,5 @@
 #!/bin/bash
+set -u
 
 # PATHS
 DOTFILES_PATH="$HOME/.config/ng-dotfiles"
@@ -16,6 +17,8 @@ sudo apt install \
 	tilix \
 	zsh \
 	curl \
+	git-delta \
+	gitk \
 	gnome-shell-extension-manager \
 	-y
 
@@ -36,7 +39,7 @@ else
   tar -xvJf \
 	  $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx \
 	  -C $HOME/.local/share/fonts/dotfilesfonts/  
-  rm $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx \
+  rm $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx 
 fi
 
 
@@ -44,6 +47,7 @@ fi
 FILES=(
   "gitconfig"
   "zshrc"
+  "bashrc"
 )
 
 echo -e "\nHandle dotfiles\n"
@@ -67,4 +71,3 @@ for FILE in "${FILES[@]}"; do
     ln -s "$DOTFILE_PATH" "$FILE_PATH"
   fi
 done
-
