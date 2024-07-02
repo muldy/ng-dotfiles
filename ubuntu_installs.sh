@@ -2,7 +2,7 @@
 
 # PATHS
 DOTFILES_PATH="$HOME/.config/ng-dotfiles"
-OMZSH_DIR="~/.config/oh-my-zsh"
+OMZSH_DIR="$HOME/.config/oh-my-zsh"
 
 echo -e "\nInstalling packages\n"
 sudo apt install \
@@ -25,8 +25,8 @@ if [ -d "$OMZSH_DIR" ]; then
   echo -e "\nOh My Zsh alredy installed"
 else
   echo -e "\nInstalling Oh My Zsh"
-  #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  #mv ~/.oh-my-zsh $OMZSH_DIR
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  mv $HOME/.oh-my-zsh $OMZSH_DIR
 fi
 
 
