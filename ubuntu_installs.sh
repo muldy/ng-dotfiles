@@ -7,6 +7,7 @@ sudo apt install \
 	tmux \
 	tilix \
 	zsh \
+	gnome-shell-extension-manager \
 	-y
 
 
