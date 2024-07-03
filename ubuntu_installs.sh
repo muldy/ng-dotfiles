@@ -6,6 +6,7 @@ DOTFILES_PATH="$HOME/.config/ng-dotfiles"
 OMZSH_DIR="$HOME/.config/oh-my-zsh"
 mkdir -p $DOTFILES_PATH/backups/
 mkdir -p $HOME/.local/share/fonts/dotfilesfonts
+mkdir -p $HOME/git/
 
 echo -e "\nInstalling packages\n"
 sudo apt install \
@@ -21,6 +22,8 @@ sudo apt install \
 	gitk \
 	gnome-shell-extension-manager \
 	tlp \
+	syncthing \
+	variety \
 	-y
 
 if [ -d "/sys/class/power_supply/BAT0" ]; then
@@ -34,6 +37,8 @@ fi
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 sudo snap install bitwarden
 sudo snap connect bitwarden:password-manager-service
+systemctl --user enable syncthing.service
+systemctl --user start syncthing.service
 
 
 echo -e "\nInstalling Oh My ZShell\n"
