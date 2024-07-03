@@ -24,6 +24,7 @@ sudo apt install \
 	tlp \
 	syncthing \
 	variety \
+	build-essential \
 	-y
 
 if [ -d "/sys/class/power_supply/BAT0" ]; then
