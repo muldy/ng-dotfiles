@@ -20,7 +20,15 @@ sudo apt install \
 	git-delta \
 	gitk \
 	gnome-shell-extension-manager \
+	tlp \
 	-y
+
+if [ -d "/sys/class/power_supply/BAT0" ]; then
+  echo -e "\nBattery detected, installing tlp"
+  sudo apt install tlp -y
+else
+  echo -e "\nNo Battery detected"
+fi
 
 # set defaults
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
