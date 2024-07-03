@@ -46,8 +46,9 @@ else
 	  https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.tar.xz
   tar -xvJf \
 	  $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx \
-	  -C $HOME/.local/share/fonts/dotfilesfonts/  
-  rm $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx 
+	  -C $HOME/.local/share/fonts/  
+  rm -rf $HOME/.local/share/fonts/dotfilesfonts/ 
+  fc-cache -f -v
 fi
 
 
