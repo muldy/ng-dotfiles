@@ -35,11 +35,3 @@ else
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   mv $HOME/.oh-my-zsh $OMZSH_DIR
 fi
-
-curl -L -o $DF_FONTS_FOLDER/fonts.tar.zx \
-	https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.tar.xz
-tar -xvJf \
-	$DF_FONTS_FOLDER/fonts.tar.zx \
-	-C $DF_FONTS_FOLDER
-rm -rf $DF_FONTS_FOLDER/fonts.tar.zx
-fc-cache -f -v
