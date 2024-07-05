@@ -9,7 +9,7 @@ mkdir -p $HOME/.local/share/fonts/dotfilesfonts
 mkdir -p $HOME/git/
 
 echo -e "\nInstalling packages\n"
-sudo apt install \
+sudo apt install -y\
 	neovim \
 	git \
 	tree \
@@ -24,8 +24,7 @@ sudo apt install \
 	tlp \
 	syncthing \
 	variety \
-	build-essential \
-	-y
+	build-essential
 
 if [ -d "/sys/class/power_supply/BAT0" ]; then
   echo -e "\nBattery detected, installing tlp"

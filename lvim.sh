@@ -1,13 +1,12 @@
 #!/bin/bash
 set -u 
 echo -e "\nInstalling packages\n"
-sudo apt install \
+sudo apt install -y \
 	build-essential \
 	flake8 \
 	tree-sitter-cli \
 	fd-find \
-	ripgrep \ 
-	-y
+	ripgrep  
 
 sudo systemctl daemon-reload
 
