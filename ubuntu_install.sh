@@ -33,6 +33,9 @@ if [ -d "$OMZSH_DIR" ]; then
   echo -e "\nOh My Zsh alredy installed"
 else
   echo -e "\nInstalling Oh My Zsh"
-  sh -c "$(cay ./oh-my-shell-install.sh)"
-  mv "$HOME/.oh-my-zsh" "$OMZSH_DIR"
+  sh -c "$(cat ./oh-my-shell-install.sh)"
+  mv $HOME/.oh-my-zsh $OMZSH_DIR
+
+  echo "Now run ./dotfile_manage.sh"
+
 fi
