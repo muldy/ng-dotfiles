@@ -22,7 +22,6 @@ sudo apt install -y\
 	gitk \
 	gnome-shell-extension-manager \
 	tlp \
-	syncthing \
 	variety \
 	build-essential
 
@@ -37,8 +36,6 @@ fi
 sudo update-alternatives --set x-terminal-emulator /usr/bin/tilix.wrapper
 sudo snap install bitwarden
 sudo snap connect bitwarden:password-manager-service
-systemctl --user enable syncthing.service
-systemctl --user start syncthing.service
 
 
 echo -e "\nInstalling Oh My ZShell\n"
