@@ -4,8 +4,9 @@ set -u
 # PATHS
 DOTFILES_PATH="$HOME/.config/ng-dotfiles"
 OMZSH_DIR="$HOME/.config/oh-my-zsh"
+DF_FONTS_FOLDER="$HOME/.local/share/fonts/"
 mkdir -p $DOTFILES_PATH/backups/
-mkdir -p $HOME/.local/share/fonts/dotfilesfonts
+mkdir -p $DF_FONTS_FOLDER
 mkdir -p $HOME/git/
 
 echo -e "\nInstalling packages\n"
@@ -46,12 +47,12 @@ else
   echo -e "\nInstalling Oh My Zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   mv $HOME/.oh-my-zsh $OMZSH_DIR
-  curl -L -o $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx \
+  curl -L -o $DF_FONTS_FOLDER/fonts.tar.zx \
 	  https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.tar.xz
   tar -xvJf \
-	  $HOME/.local/share/fonts/dotfilesfonts/fonts.tar.zx \
-	  -C $HOME/.local/share/fonts/  
-  rm -rf $HOME/.local/share/fonts/dotfilesfonts/ 
+	  $DF_FONTS_FOLDER/fonts.tar.zx \
+	  -C $DF_FONTS_FOLDER
+  rm -rf $DF_FONTS_FOLDER/fonts.tar.zx
   fc-cache -f -v
 fi
 
