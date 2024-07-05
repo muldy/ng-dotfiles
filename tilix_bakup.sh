@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
+set -e 
 
 # Backs up and restores tilix settings 
-
-set -e
 
 if [[ $1 == 'backup' ]]; then
   dconf dump '/com/gexperts/Tilix/' > tilix-settings.dconf

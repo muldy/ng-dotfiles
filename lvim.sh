@@ -1,5 +1,6 @@
-#!/bin/bash
-set -u 
+#!/usr/bin/env bash
+set -e 
+
 echo -e "\nInstalling packages\n"
 sudo apt install -y \
 	build-essential \
