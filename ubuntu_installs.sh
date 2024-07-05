@@ -21,7 +21,6 @@ sudo apt install -y\
 	git-delta \
 	gitk \
 	gnome-shell-extension-manager \
-	tlp \
 	variety \
 	build-essential
 
