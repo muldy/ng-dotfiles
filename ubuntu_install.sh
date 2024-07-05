@@ -32,6 +32,6 @@ if [ -d "$OMZSH_DIR" ]; then
   echo -e "\nOh My Zsh alredy installed"
 else
   echo -e "\nInstalling Oh My Zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(cay ./oh-my-shell-install.sh)"
   mv $HOME/.oh-my-zsh $OMZSH_DIR
 fi
