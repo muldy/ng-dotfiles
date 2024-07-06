@@ -1,6 +1,7 @@
 [alias]
   # list all aliases available on this gitconfig
   alias = !git config --get-regexp '^alias\\.' | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
   # `git auto-fixup`
   #
