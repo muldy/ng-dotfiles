@@ -2,6 +2,16 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+#Note that the directories 
+#
+#'/var/lib/flatpak/exports/share'
+#'/home/muldy/.local/share/flatpak/exports/share'
+#
+#are not in the search path set by the XDG_DATA_DIRS environment variable, so
+#applications installed by Flatpak may not appear on your desktop until the
+#session is restarted.
+
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.config/oh-my-zsh"
 
@@ -109,3 +119,6 @@ alias vimdiff="lvim -d"
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte-2.91.sh
 fi
+
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
