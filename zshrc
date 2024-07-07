@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+unset HOMEBREW_NO_AUTO_UPDATE=1
+unset HOMEBREW_NO_INSTALL_CLEANUP
+
 #Note that the directories 
 #
 #'/var/lib/flatpak/exports/share'
