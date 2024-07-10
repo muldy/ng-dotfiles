@@ -84,7 +84,7 @@ ZSH_THEME="agnoster" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found history-substring-search)
+plugins=(git command-not-found history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
