@@ -24,6 +24,7 @@ sudo apt install -y\
   curl \
   git-delta \
   pre-commit \
+  yq \
   build-essential
 
 
