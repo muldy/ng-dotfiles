@@ -25,6 +25,7 @@ sudo apt install -y\
   git-delta \
   pre-commit \
   yq \
+  xsel \
   build-essential
 
 
