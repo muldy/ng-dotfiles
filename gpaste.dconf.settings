@@ -1,0 +1,17 @@
+[/]
+close-on-select=true
+element-size=uint64 60
+growing-lines=false
+images-support=false
+max-displayed-history-size=uint64 20
+max-history-size=uint64 100
+max-memory-usage=uint64 30
+max-text-item-size=uint64 1048575
+min-text-item-size=uint64 1
+open-centered=false
+primary-to-history=false
+save-history=true
+synchronize-clipboards=false
+track-changes=true
+track-extension-state=false
+trim-items=false
