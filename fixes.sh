@@ -6,3 +6,7 @@ set -e
 #tracker3 reset -s -r
 
 dconf reset -f /org/gnome/GPaste/
+
+systemctl --user unmask tracker-miner-fs-3.service 
+systemctl --user enable tracker-miner-fs-3.service
+systemctl --user start tracker-miner-fs-3.service
