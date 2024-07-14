@@ -10,3 +10,7 @@ dconf reset -f /org/gnome/GPaste/
 systemctl --user unmask tracker-miner-fs-3.service 
 systemctl --user enable tracker-miner-fs-3.service
 systemctl --user start tracker-miner-fs-3.service
+
+#rm -rf .gnome .gnome2 .gconf .gconfd .metacity .cache .dbus .dmrc .mission-control .thumbnails ~/.config/dconf/user ~.compiz*
+
+
