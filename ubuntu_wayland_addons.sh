@@ -5,6 +5,7 @@ sudo apt install -y\
 	gitk \
 	tilix \
 	gnome-shell-extension-manager \
+  gpaste \
 	variety 
 
 # set defaults

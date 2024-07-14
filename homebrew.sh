@@ -8,5 +8,9 @@ set -e
   kubectx \
   helm \
   kustomize \
-  terraform 
+  terraform \
+  git-delta \
+  pre-commit \
+  yq \
+  jq
 
