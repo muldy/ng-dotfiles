@@ -16,4 +16,4 @@ sudo snap connect bitwarden:password-manager-service
 
 #dconf
 #dconf dump /org/gnome/GPaste/ > gpaste.dconf.settings
-dconf load /org/gnome/GPaste/ < gpaste.dconf.settings
+#dconf load /org/gnome/GPaste/ < gpaste.dconf.settings
