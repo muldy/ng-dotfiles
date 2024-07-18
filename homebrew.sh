@@ -4,13 +4,14 @@ set -e
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 /home/linuxbrew/.linuxbrew/bin/brew install \
+  git-delta \
+  helm \
+  jq \
   k9s \
   kubectx \
-  helm \
   kustomize \
-  terraform \
-  git-delta \
   pre-commit \
+  terraform \
   yq \
-  jq
+  zsh-completions
 
