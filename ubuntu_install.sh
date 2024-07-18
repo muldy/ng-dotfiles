@@ -24,17 +24,3 @@ sudo apt install -y\
   curl \
   xsel \
   build-essential
-
-
-echo -e "\nInstalling Oh My ZShell\n"
-# omzsh
-if [ -d "$OMZSH_DIR" ]; then
-  echo -e "\nOh My Zsh alredy installed"
-else
-  echo -e "\nInstalling Oh My Zsh"
-  sh -c "$(cat ./oh-my-shell-install.sh)"
-  mv $HOME/.oh-my-zsh $OMZSH_DIR
-
-  echo "Now run ./dotfile_manage.sh"
-
-fi

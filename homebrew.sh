@@ -13,5 +13,6 @@ set -e
   pre-commit \
   terraform \
   yq \
+  tree-sitter \
   zsh-completions
 
