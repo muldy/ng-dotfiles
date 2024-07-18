@@ -22,9 +22,6 @@ sudo apt install -y\
   tmux \
   zsh \
   curl \
-  git-delta \
-  pre-commit \
-  yq \
   xsel \
   build-essential
 
