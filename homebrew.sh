@@ -13,8 +13,5 @@ set -e
   pre-commit \
   terraform \
   yq \
-  tree-sitter \
-  zsh-completions
-  zsh-completions \
-  zsh-syntax-highlighting
+  tree-sitter 
 
