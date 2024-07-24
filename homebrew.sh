@@ -15,4 +15,6 @@ set -e
   yq \
   tree-sitter \
   zsh-completions
+  zsh-completions \
+  zsh-syntax-highlighting
 
