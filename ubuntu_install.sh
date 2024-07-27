@@ -23,4 +23,5 @@ sudo apt install -y\
   zsh \
   curl \
   xsel \
+  net-tools \
   build-essential
