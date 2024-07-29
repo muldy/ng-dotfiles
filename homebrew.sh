@@ -16,4 +16,3 @@ set -e
   tree-sitter \ 
   yq \
   zsh-completions 
-
