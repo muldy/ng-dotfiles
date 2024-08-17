@@ -10,6 +10,7 @@ FILES=(
   ".bashrc"
   ".config/tmux/tmux.conf"
   ".config/kitty/kitty.conf"
+  ".config/nvim"
 )
 
 echo -e "\nHandle dotfiles\n"
