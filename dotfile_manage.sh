@@ -9,6 +9,7 @@ FILES=(
   ".zshrc"
   ".bashrc"
   ".config/tmux/tmux.conf"
+  ".config/kitty/kitty.conf"
 )
 
 echo -e "\nHandle dotfiles\n"
