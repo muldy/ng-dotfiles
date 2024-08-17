@@ -2,8 +2,9 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-unset HOMEBREW_NO_AUTO_UPDATE
-unset HOMEBREW_NO_INSTALL_CLEANUP
+set HOMEBREW_NO_AUTO_UPDATE
+set HOMEBREW_INSTALL_CLEANUP
+
 
 #Note that the directories 
 #
