@@ -117,8 +117,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim=lvim
-alias vimdiff="lvim -d" 
+alias vim=nvim
+alias vimdiff="nvim -d" 
 alias pbcopy='gpaste-client'
 alias pbpaste='echo `gpaste-client get --use-index 0 --reverse `'
 
