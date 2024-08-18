@@ -7,6 +7,7 @@ OMZSH_DIR="$HOME/.config/oh-my-zsh"
 DF_FONTS_FOLDER="$HOME/.local/share/fonts/"
 DF_GIT_FOLDER="$HOME/got/"
 TMUX_PATH="$HOME/.config/tmux/"
+KITTY_PATH="$HOME/.config/kitty/"
 
 #make sure folders exist
 mkdir -p "$DOTFILES_PATH/backups/"
@@ -14,10 +15,10 @@ mkdir -p "$DF_FONTS_FOLDER"
 mkdir -p "$HOME/git/"
 mkdir -p "$DF_GIT_FOLDER"
 mkdir -p "$TMUX_PATH"
+mkdir -p "$KITTY_PATH"
 
 echo -e "\nInstalling packages\n"
 sudo apt install -y\
-  neovim \
   git \
   tree \
   htop \
