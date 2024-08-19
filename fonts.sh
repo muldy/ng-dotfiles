@@ -7,6 +7,7 @@ FONTS=(
   "https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip"
   "https://codeload.github.com/googlefonts/noto-emoji/zip/refs/tags/v2.042"
+  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip"
   )
 
 echo -e "Adding fonts"
