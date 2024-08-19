@@ -11,6 +11,7 @@ FILES=(
   ".config/tmux/tmux.conf"
   ".config/kitty/kitty.conf"
   ".config/nvim"
+  ".config/fontconfig/fonts.conf"
 )
 
 echo -e "\nHandle dotfiles\n"
