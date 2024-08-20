@@ -1,6 +1,7 @@
+# shellcheck disable=SC2148,SC2034,SC1090,SC1091,SC2086
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/snap/bin/:$PATH
 
 set HOMEBREW_NO_AUTO_UPDATE
 set HOMEBREW_INSTALL_CLEANUP
@@ -87,7 +88,7 @@ ZSH_THEME="agnoster" # set by `omz`
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -138,5 +139,9 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%2~'
+  prompt_segment blue "$CURRENT_FG" '%2~'
 }
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
