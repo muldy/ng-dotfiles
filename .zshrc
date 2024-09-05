@@ -86,7 +86,7 @@ ZSH_THEME="agnoster" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git command-not-found history-substring-search zsh-autosuggestions zsh-syntax-highlighting you-should-use )
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -118,6 +118,11 @@ source "$ZSH/oh-my-zsh.sh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='eza --icons'
+alias l='eza -lah --icons'
+alias ll='eza -lh --icons '
+alias la='eza -lAh --icons '
+alias lsa='eza -lah --icons '
 alias vim=nvim
 alias vimdiff="nvim -d" 
 alias pbcopy='gpaste-client'
