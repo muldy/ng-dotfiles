@@ -4,7 +4,8 @@ set -e
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 /home/linuxbrew/.linuxbrew/bin/brew install \
-  argocd \ 
+  argocd \
+  fzf \
   git-delta \
   helm \
   jq \
@@ -12,8 +13,9 @@ set -e
   kubectx \
   kustomize \
   nvim \
+  jandedobbeleer/oh-my-posh/oh-my-posh \
   pre-commit \
   terraform \
-  tree-sitter \ 
+  tree-sitter \
   yq \
   zsh-completions 

@@ -12,6 +12,7 @@ FILES=(
   ".config/kitty/kitty.conf"
   ".config/nvim"
   ".config/fontconfig/fonts.conf"
+  ".config/ohmyposh/zen.toml"
 )
 
 echo -e "\nHandle dotfiles\n"
@@ -28,7 +29,7 @@ for FILE in "${FILES[@]}"; do
       echo "$FILE_PATH is a symbolic link."
     else
       echo "$FILE_PATH is not a symbolic link, moving to $DOTFILES_PATH/backups/"
-      mv $FILE_PATH $DOTFILES_PATH/backups/
+      mv "$FILE_PATH" "$DOTFILES_PATH/backups/"
       echo "Creating symbolic link for $FILE"
       ln -s "$DOTFILE_PATH" "$FILE_PATH"
     fi

@@ -143,10 +143,13 @@ fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-prompt_dir() {
-  prompt_segment blue "$CURRENT_FG" '%2~'
-}
+#prompt_dir() {
+#  prompt_segment blue "$CURRENT_FG" '%2~'
+#}
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)
+source <(fzf --zsh)
+alias aws-profile='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
